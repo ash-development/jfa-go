@@ -763,8 +763,8 @@ func main() {
 			os.Exit(1)
 		}
 		fmt.Println(info(`If you want to execute jfa-go with special arguments, re-run this command with them.
-Move the newly created "jfa-go.service" file to ~/.config/systemd/user (Creating it if necessary).
-Then run "systemctl --user daemon-reload".
+Move the newly created "jfa-go.service" file to /etc/systemd/system (Creating it if necessary).
+Then run "systemctl daemon-reload".
 You can then run:
 
 `))
@@ -772,15 +772,15 @@ You can then run:
 		time.Sleep(time.Millisecond)
 		color.New(color.FgGreen).Print("To start: ")
 		time.Sleep(time.Millisecond)
-		fmt.Print(info("systemctl --user start jfa-go\n\n"))
+		fmt.Print(info("systemctl start jfa-go\n\n"))
 		time.Sleep(time.Millisecond)
 		color.New(color.FgRed).Print("To stop: ")
 		time.Sleep(time.Millisecond)
-		fmt.Print(info("systemctl --user stop jfa-go\n\n"))
+		fmt.Print(info("systemctl stop jfa-go\n\n"))
 		time.Sleep(time.Millisecond)
 		color.New(color.FgYellow).Print("To restart: ")
 		time.Sleep(time.Millisecond)
-		fmt.Print(info("systemctl --user stop jfa-go\n"))
+		fmt.Print(info("systemctl stop jfa-go\n"))
 	} else if TRAY {
 		RunTray()
 	} else {
